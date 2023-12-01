@@ -55,4 +55,3 @@ export default async function Index() {
     </div>
   )
 }
-export const runtime = 'edge';
