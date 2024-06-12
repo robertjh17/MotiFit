@@ -1,8 +1,24 @@
-import { type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { updateSession } from "@/utils/supabase/middleware";
+import { createClient } from "@/utils/supabase/server";
 
 export async function middleware(request: NextRequest) {
-  return await updateSession(request);
+  const response = await updateSession(request);
+
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (user && request.nextUrl.pathname === "/login") {
+    return NextResponse.redirect(new URL("/protected", request.url));
+  }
+
+  if (!user && request.nextUrl.pathname === "/protected") {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  return response;
 }
 
 export const config = {
