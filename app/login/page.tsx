@@ -79,6 +79,7 @@ export default function Login({
           </FormControl>
           <SubmitButton
             pendingText="Signing In..."
+            formAction={signIn}
             >
               Sign in
             </SubmitButton>
