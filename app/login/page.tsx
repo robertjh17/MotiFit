@@ -2,7 +2,8 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { Card, CardBody, CardHeader } from "@chakra-ui/react";
+import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react";
+import { FormControl, FormLabel, Input, Button } from "@chakra-ui/react";
 import { SubmitButton } from "./submit-button";
 
 export default function Login({
@@ -57,9 +58,31 @@ export default function Login({
       <div className="w-4/6">
       70%
       </div>
-      <div className="w-2/6 items-center">
-      <Card>
-      30%
+      <div className="w-2/6 h-screen flex items-center justify-center">
+      <Card
+      maxW={"md"}
+      align={"center"}
+      >
+      <CardHeader>
+        <Heading as="h1" size={'md'} >
+          Sign In
+        </Heading>
+      </CardHeader>
+              <CardBody>
+          <FormControl id="email">
+            <FormLabel>Email address</FormLabel>
+            <Input type="email" />
+          </FormControl>
+          <FormControl id="password" mt={4}>
+            <FormLabel>Password</FormLabel>
+            <Input type="password" />
+          </FormControl>
+          <SubmitButton
+            pendingText="Signing In..."
+            >
+              Sign in
+            </SubmitButton>
+        </CardBody>
       </Card>
       </div>
     </>
