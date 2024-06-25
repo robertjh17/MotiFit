@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import LogoutButton from "@/components/LogoutButton";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
             />
           </a>
           <ThemeSwitch />
+          <LogoutButton />
         </div>
       </div>
 
