@@ -1,11 +1,11 @@
 import Image from "next/image"
-import ThemeSwitch from "@/components/ThemeSwitch"
+import ThemeSwitch from "@/components/buttons/ThemeSwitch"
 import Link from 'next/link';
 
 
 export default function Navbar() {
     return (
-      <nav className="flex justify-between items-center p-2 bg-white dark:bg-gray-900 border-b border-teal-500 shadow-bottom">
+      <nav className="flex bg-slate-100 justify-between items-center p-2 dark:bg-gray-900 border-b border-teal-500 shadow-bottom dark:shadow-gray-800">
         <div className="flex items-center pl-6 space-x-4">
           <Image src="https://via.placeholder.com/100x40" placeholder="empty" alt="logo motifit" width={100} height={40}/>
 
