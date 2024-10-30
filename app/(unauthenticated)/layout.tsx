@@ -7,7 +7,7 @@ export default function UnAuthenticatedLayout({
     return(
         <div>
             <Navbar />
-            <main className="flex flex-col max-h-screen items-center justify-between">
+            <main className="max-h-screen justify-between">
             {children}
             </main>
         </div>
